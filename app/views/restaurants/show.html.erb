@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="card bg-secondary-subtle p-2">
+    <div class="img-box" style="height: 400px; width: 100%; background-image: url(<%= image_url(@pic) %>); background-position: center; background-size: cover;">
+    </div>
+    <div class="p-3">
+      <h2><%= "#{@restaurant.name}" %></h2>
+      <p><strong>Address: </strong><%= "#{@restaurant.address}" %></p>
+      <p><strong>Phone Number: </strong><%= "P#{@restaurant.phone_number}" %></p>
+      <p><strong>Category: </strong><%= "#{@restaurant.category}" %></p>
+    </div>
+  </div>
+  <%= link_to "Back to Restaurants", restaurants_path %>
+</div>

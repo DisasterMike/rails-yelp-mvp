@@ -1,0 +1,23 @@
+<div class="nav-bar">
+  <input type="checkbox" id="dark-mode" name="dark-mode" checked />
+  <label for="dark-mode">DarkMode</label>
+</div>
+<div class="container">
+  <h1 class="bg-secondary-subtle">Restaurants</h1>
+  <div class="row">
+    <% @restaurants.each_with_index do |restaurant,index| %>
+      <div class="col-4 bg-secondary-subtle p-2">
+        <div class="img-box" style="height: 180px; width: 100%; background-image: url(<%= image_url(@pics[index]) %>); background-position: center; background-size: cover;">
+        </div>
+        <div class="p-3">
+          <%# <img src="app/assets/images/Japanese.jpg" alt=""> %>
+          <h2><%= "#{restaurant.name}" %></h2>
+          <p><strong>Address: </strong><%= "#{restaurant.address}" %></p>
+          <p><strong>Phone Number: </strong><%= "P#{restaurant.phone_number}" %></p>
+          <p><strong>Category: </strong><%= "#{restaurant.category}" %></p>
+          <%= link_to "More details", restaurant_path(restaurant) %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
