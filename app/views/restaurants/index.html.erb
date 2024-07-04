@@ -13,11 +13,12 @@
           <%# <img src="app/assets/images/Japanese.jpg" alt=""> %>
           <h2><%= "#{restaurant.name}" %></h2>
           <p><strong>Address: </strong><%= "#{restaurant.address}" %></p>
-          <p><strong>Phone Number: </strong><%= "P#{restaurant.phone_number}" %></p>
+          <p><strong>Phone Number: </strong><%= "#{restaurant.phone_number}" %></p>
           <p><strong>Category: </strong><%= "#{restaurant.category}" %></p>
-          <%= link_to "More details", restaurant_path(restaurant) %>
+          <%= link_to "More details", restaurant_path(restaurant), class: "btn btn-primary" %>
         </div>
       </div>
     <% end %>
   </div>
+  <%= link_to "Create a new Restaurant", new_restaurant_path, class: "btn btn-primary m-3" %>
 </div>

@@ -6,10 +6,10 @@
       <div class="p-3">
         <h2><%= "#{@restaurant.name}" %></h2>
         <p><strong>Address: </strong><%= "#{@restaurant.address}" %></p>
-        <p><strong>Phone Number: </strong><%= "P#{@restaurant.phone_number}" %></p>
+        <p><strong>Phone Number: </strong><%= "#{@restaurant.phone_number}" %></p>
         <p><strong>Category: </strong><%= "#{@restaurant.category}" %></p>
         <br>
-        <%= link_to "Leave a review", new_restaurant_review_path(@restaurant) %>
+        <%= link_to "Leave a review", new_restaurant_review_path(@restaurant), class: "btn btn-primary" %>
       </div>
     </div>
   </div>
@@ -23,6 +23,9 @@
         <% end %>
       </div>
     <% end %>
+    <% if @reviews.length.zero? %>
+      <p>No reviews have been created yet.</p>
+    <% end %>
   </div>
-  <%= link_to "Back to Restaurants", restaurants_path %>
+  <%= link_to "Back to Restaurants", restaurants_path, class: "btn btn-primary m-3" %>
 </div>
